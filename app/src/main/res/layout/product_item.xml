@@ -1,45 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
     <ImageView
         android:id="@+id/product_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="12dp"
         android:contentDescription="image"
-        android:src="@drawable/ic_launcher_background" />
+         />
 
-    <TextView
-        android:id="@+id/product_name"
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:layout_marginTop="8dp"
-        android:text="Product Name" />
+        android:layout_weight="1">
 
-    <TextView
-        android:id="@+id/product_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:layout_marginTop="4dp"
-        android:text="Product Description" />
+        <ImageView
+            android:id="@+id/productLogoId"
+            android:layout_width="51dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="product logo"
+            app:layout_constraintEnd_toStartOf="@+id/product_nameId"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/product_cost"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginTop="4dp"
-        android:text="Product Cost" />
+        <TextView
+            android:id="@+id/product_nameId"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="16dp"
+            android:text="Product Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/productLogoId"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/add_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Add" />
+        <TextView
+            android:id="@+id/product_descriptionId"
+            android:layout_width="0dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="28dp"
+            android:text="Product Description"
+            app:layout_constraintEnd_toStartOf="@+id/product_CostId"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productLogoId" />
+
+        <TextView
+            android:id="@+id/product_CostId"
+            android:layout_width="0dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="8dp"
+            android:text="$400"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/product_descriptionId"
+            app:layout_constraintTop_toBottomOf="@+id/product_nameId" />
+
+        <Button
+            android:id="@+id/add_button"
+            android:layout_marginTop="25dp"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
+            android:text="Add"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_descriptionId" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>
